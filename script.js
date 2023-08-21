@@ -22,28 +22,34 @@ function validateInput() {
         errorMessage.innerHTML = "Error: Only A-Z, a-z, 0-9, space, and % are allowed.";
         inputBox.style.borderColor = "red";
         inputBox.value = inputValue.slice(0, -1);
-    } else {
-        var digitCount = inputValue.replace(/[^0-9]/g, '').length;
+    } else
+	{
+        var lastChars = inputValue.slice(-4);
 
-        if (digitCount > 3) {
-            if (inputValue === "2000" || inputValue === "2099") {
-                errorMessage.innerHTML = "";
-                inputBox.style.borderColor = "";
-            } else {
-                var replacedValue = inputValue.replace(/[^0-9]/g, '');
-
-                if (replacedValue === '2000' || replacedValue === '2099') {
-                    errorMessage.innerHTML = "";
-                    inputBox.style.borderColor = "";
-                } else {
-                    errorMessage.innerHTML = "Error: Input contains more than 3 digits.";
-                    inputBox.style.borderColor = "red";
-                    inputBox.value = inputValue.slice(0, -1);
-                }
-            }
-        } else {
-            errorMessage.innerHTML = "";
-            inputBox.style.borderColor = "";
+        if (lastChars === '2000' || lastChars === '2099')
+        {
+          errorMessage.innerHTML = "";
+          inputBox.style.borderColor = "";
+        }
+        else
+        {
+			var lastThreeDigits = inputValue.slice(-3);
+			if (lastThreeDigits === '200' || lastThreeDigits === '209')
+			{
+				errorMessage.innerHTML = "";
+				inputBox.style.borderColor = "";
+			}
+			else if (/^\d{4}$/.test(lastChars))
+			{
+				errorMessage.innerHTML = "Error: Values with more than 3 digits are not allowed.";
+				inputBox.style.borderColor = "red";
+				inputBox.value = inputValue.slice(0, -1);
+			}
+			else
+			{
+				errorMessage.innerHTML = "";
+				inputBox.style.borderColor = "";
+			}
         }
     }
 }

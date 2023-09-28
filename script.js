@@ -24,7 +24,34 @@ function validateInput() {
 	} else {
 		var lastChars = inputValue.slice(-4);
 
-		if (lastChars === '2000' || lastChars === '2099') {
+		if ((lastChars.startsWith('200')) && lastChars >= '2000' && lastChars <= '2099') {
+			errorMessage.innerHTML = "";
+			inputBox.style.borderColor = "";
+		}else if ((lastChars.startsWith('201')) && lastChars >= '2000' && lastChars <= '2099') {
+			errorMessage.innerHTML = "";
+			inputBox.style.borderColor = "";
+		}else if ((lastChars.startsWith('202')) && lastChars >= '2000' && lastChars <= '2099') {
+			errorMessage.innerHTML = "";
+			inputBox.style.borderColor = "";
+		}else if ((lastChars.startsWith('203')) && lastChars >= '2000' && lastChars <= '2099') {
+			errorMessage.innerHTML = "";
+			inputBox.style.borderColor = "";
+		}else if ((lastChars.startsWith('204')) && lastChars >= '2000' && lastChars <= '2099') {
+			errorMessage.innerHTML = "";
+			inputBox.style.borderColor = "";
+		}else if ((lastChars.startsWith('205')) && lastChars >= '2000' && lastChars <= '2099') {
+			errorMessage.innerHTML = "";
+			inputBox.style.borderColor = "";
+		}else if ((lastChars.startsWith('206')) && lastChars >= '2000' && lastChars <= '2099') {
+			errorMessage.innerHTML = "";
+			inputBox.style.borderColor = "";
+		}else if ((lastChars.startsWith('207')) && lastChars >= '2000' && lastChars <= '2099') {
+			errorMessage.innerHTML = "";
+			inputBox.style.borderColor = "";
+		}else if ((lastChars.startsWith('208')) && lastChars >= '2000' && lastChars <= '2099') {
+			errorMessage.innerHTML = "";
+			inputBox.style.borderColor = "";
+		}else if ((lastChars.startsWith('209')) && lastChars >= '2000' && lastChars <= '2099') {
 			errorMessage.innerHTML = "";
 			inputBox.style.borderColor = "";
 		} else {
